@@ -1,0 +1,24 @@
+int nbre_joueur;
+int joueur_cour;
+Joueur** list_joueurs;
+Possession** list_pos;
+int de1, de2;
+int terrain[4] ;//= {200, 400, 500, 600};
+
+int main()
+{
+    int i;
+    initialisation_jeu();
+    for(i=0; i<nbre_joueur; i++) {
+        printf("Nom du Joueur %d est %s \n", i+1, list_joueurs[i]->nom);
+    }
+
+    initialiser_case();
+    for(i=0; i<4; i++) {
+        printf("Possession %d titre %s : \n", i+1, list_pos[i]->regle);
+    }
+
+    regle_rue(list_joueurs[1], list_pos[0], list_joueurs, 1, nbre_joueur);
+
+    return 0;
+}
